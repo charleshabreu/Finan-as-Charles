@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#06281f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fit Finanças">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<title>Fit Finanças</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a3a2c;--bg2:#0d4535;--card:#f3faf6;--ink:#12261b;--dark:#06281f;--gold:#f2c230;--blue:#4aa3ff;--green:#3ddc84;--red:#e5483a;--mut:#6b7b72;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg) repeating-linear-gradient(135deg,var(--bg2) 0 2px,var(--bg) 2px 26px);color:#fff;font:14px/1.4 Inter,system-ui,sans-serif;padding-bottom:84px}
+.wm{position:fixed;inset:0;pointer-events:none}.wm::after{content:"$";position:absolute;right:-20px;bottom:50px;font:700 280px Oswald,sans-serif;opacity:.05}
+main{position:relative;max-width:760px;margin:0 auto;padding:0 12px 12px}
+header{background:var(--dark);border-bottom:3px solid var(--gold);padding:14px 16px;margin:0 -12px 12px}
+h1{margin:0;font:700 22px Oswald,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+h1 small{display:block;font:500 11px Inter,sans-serif;color:var(--gold);letter-spacing:.04em}
+h2{font:700 15px Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:16px 0 8px;color:var(--gold)}
+.card{background:var(--card);color:var(--ink);border-radius:12px;padding:12px;margin-bottom:10px;overflow-x:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.sc{border-radius:12px;padding:12px;color:#fff;text-align:center}
+.sc.a{background:#1f6e4a}.sc.b{background:#a33a30}.sc.c{background:#1f4e79}.sc.d{background:#7a5c10}
+.sc b{display:block;font:700 12px Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.sc .v{font:700 19px Oswald,sans-serif;margin:4px 0;color:var(--gold)}.sc small{opacity:.85;font-size:11px}
+.big{background:var(--dark);border:2px solid var(--gold);border-radius:12px;padding:14px;text-align:center;margin-bottom:10px}
+.big .v{font:700 28px Oswald,sans-serif;color:var(--gold)}.big small{color:#cfe8d8}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:#14573a;color:#fff;padding:5px 6px;font-size:11px;text-align:center}
+td{padding:5px 6px;border-bottom:1px solid #d2e2d8;text-align:center}td.n{text-align:left;font-weight:600}
+.pos{color:#1b7f46;font-weight:700}.neg{color:var(--red);font-weight:700}
+input,select,button{font:inherit;border-radius:8px;border:1px solid #b9cfc0;padding:7px 8px;background:#fff;color:var(--ink)}
+button{background:var(--gold);color:var(--dark);font-weight:700;border:0;cursor:pointer}
+button.s{padding:4px 8px;font-size:11px}button.x{background:#e8d5d2;color:#8a2a20}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.row>*{flex:1;min-width:90px}
+.pl{display:flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid #d2e2d8}.pl:last-child{border:0}
+.pl .k{width:22px;color:var(--mut);font-size:11px;text-align:right}
+.pl input[type=text]{flex:1;min-width:0}.pl input[type=number]{width:92px}
+.pl .i{flex:1;min-width:0}.pl .i b{display:block}.pl .i span{font-size:11px;color:var(--mut)}
+.pl label{font-size:11px;white-space:nowrap;color:var(--mut)}.pl input[type=checkbox]{width:20px;height:20px;vertical-align:middle}
+.bar{height:10px;background:#d2e2d8;border-radius:6px;overflow:hidden;margin:3px 0 8px}.bar i{display:block;height:100%;background:var(--green)}
+.bar.g i{background:var(--gold)}
+.mut{color:var(--mut);font-size:11px}
+.mn{display:flex;align-items:center;justify-content:space-between;background:var(--dark);border-radius:12px;padding:6px 8px;margin-bottom:10px}
+.mn b{font:700 15px Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--dark);border-top:3px solid var(--gold);display:flex;padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;background:none;color:#cfe8d8;border-radius:0;padding:10px 2px;font-size:11px}nav button.on{color:var(--gold)}
+nav button i{display:block;font-style:normal;font-size:18px}
+textarea{width:100%;min-height:70px;font:11px monospace}
+</style></head><body><div class="wm"></div>
+<main><header><h1>Fit Finanças<small>Renda, gastos e reserva do personal trainer</small></h1></header><div id="v"></div></main>
+<nav id="nv"></nav>
+<script>
+const NO=30,NP=20,MS=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const mk=n=>Array.from({length:n},()=>({n:'',v:0}));
+let S={m:new Date().toISOString().slice(0,7),on:mk(NO),pr:mk(NP),f:[],v:[],cat:['Moradia','Alimentação','Transporte','Saúde','Lazer','Educação','Outros'],r:{m:6,a:0},rec:{}},tab='p';
+try{const x=localStorage.getItem('fitfin');if(x)S=Object.assign(S,JSON.parse(x))}catch(e){}
+const save=()=>{try{localStorage.setItem('fitfin',JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s),num=x=>{const n=parseFloat(String(x).replace(',','.'));return isFinite(n)&&n>0?n:0};
+const f=n=>(n<0?'−':'')+'R$ '+Math.abs(n).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sum=a=>a.reduce((t,x)=>t+(+x.v||0),0),sg=n=>`<span class="${n<0?'neg':'pos'}">${f(n)}</span>`;
+const ml=()=>{const[y,m]=S.m.split('-');return MS[+m-1]+' '+y};
+const mnav=()=>`<div class="mn"><button class="s" data-mm="-1">◀</button><b>${ml()}</b><button class="s" data-mm="1">▶</button></div>`;
+function C(){const on=sum(S.on),pr=sum(S.pr),rend=on+pr,fx=sum(S.f),vm=S.v.filter(x=>x.m===S.m),vr=sum(vm),des=fx+vr,saldo=rend-des;
+ const rc=(a,p)=>a.reduce((t,x,i)=>t+(S.rec[S.m+'|'+p+i]?+x.v||0:0),0),ro=rc(S.on,'o'),rp=rc(S.pr,'p');
+ const meta=S.r.m*des,falta=Math.max(0,meta-S.r.a);
+ const cats={};[...S.f,...vm].forEach(x=>{cats[x.c]=(cats[x.c]||0)+(+x.v||0)});
+ return{on,pr,rend,fx,vm,vr,des,saldo,sobraFx:rend-fx,ro,rp,meta,falta,cats,
+  ao:S.on.filter(x=>x.v>0).length,ap:S.pr.filter(x=>x.v>0).length}}
+function view(){const c=C(),el=$('#v');
+ if(tab==='p'){const po=c.rend?Math.round(100*c.on/c.rend):0,pc=c.meta?Math.min(100,Math.round(100*S.r.a/c.meta)):0,mx=Math.max(1,...Object.values(c.cats));
+  const meses=c.saldo>0&&c.falta>0?Math.ceil(c.falta/c.saldo):null;
+  el.innerHTML=mnav()+`<div class="big"><small>Sobra da renda após as contas fixas</small><div class="v">${f(c.sobraFx)}</div><small>${f(c.rend)} de renda − ${f(c.fx)} de gastos fixos</small></div>
+  <div class="grid2"><div class="sc a"><b>Renda mensal</b><div class="v">${f(c.rend)}</div><small>online + presencial</small></div><div class="sc b"><b>Despesas</b><div class="v">${f(c.des)}</div><small>fixas + variáveis do mês</small></div>
+  <div class="sc c"><b>Gastos fixos</b><div class="v">${f(c.fx)}</div><small>${S.f.length} contas</small></div><div class="sc d"><b>Saldo do mês</b><div class="v">${f(c.saldo)}</div><small>renda − todas as despesas</small></div></div>
+  <h2>De onde vem a renda</h2><div class="card"><b>Consultoria online</b> · ${c.ao} alunos · ${f(c.on)} (${po}%)<div class="bar"><i style="width:${po}%"></i></div><b>Personal presencial</b> · ${c.ap} alunos · ${f(c.pr)} (${c.rend?100-po:0}%)<div class="bar g"><i style="width:${c.rend?100-po:0}%"></i></div>
+  <span class="mut">Recebido em ${ml()}: ${f(c.ro+c.rp)} de ${f(c.rend)} (online ${f(c.ro)} · presencial ${f(c.rp)})</span></div>
+  <h2>Reserva de emergência (${S.r.m} meses)</h2><div class="card"><div class="row"><span>Meta: <b>${f(c.meta)}</b></span><span>Guardado: <b>${f(S.r.a)}</b></span></div><div class="bar g"><i style="width:${pc}%"></i></div>
+  <span class="mut">${pc}% da meta · faltam ${f(c.falta)}${meses?' · ~'+meses+' '+(meses>1?'meses':'mês')+' guardando o saldo do mês':c.falta?' · saldo do mês não permite guardar':' · meta atingida 🎉'}</span></div>
+  <h2>Projeção do saldo</h2><div class="card"><table><tr><th>Período</th><th>Acumulado</th><th>Com a reserva</th></tr>${[3,6,12].map(n=>`<tr><td>${n} meses</td><td>${sg(c.saldo*n)}</td><td>${sg(c.saldo*n+S.r.a)}</td></tr>`).join('')}</table><span class="mut">Projeção simples: repete o saldo deste mês.</span></div>
+  <h2>Gastos por categoria</h2><div class="card">${Object.keys(c.cats).length?Object.entries(c.cats).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div><b>${esc(k)}</b> · ${f(v)} (${c.des?Math.round(100*v/c.des):0}%)<div class="bar"><i style="width:${100*v/mx}%"></i></div></div>`).join(''):'<span class="mut">Nenhum gasto lançado.</span>'}</div>`}
+ else if(tab==='o'||tab==='r'){const a=tab==='o'?S.on:S.pr,p=tab==='o'?'o':'p',t=tab==='o'?c.on:c.pr,rc=tab==='o'?c.ro:c.rp;
+  el.innerHTML=mnav()+`<div class="grid2"><div class="sc a"><b>Previsto</b><div class="v">${f(t)}</div><small>${a.filter(x=>x.v>0).length} alunos</small></div><div class="sc c"><b>Recebido</b><div class="v">${f(rc)}</div><small>em ${ml()}</small></div></div>
+  <h2>${tab==='o'?'Consultoria online ('+NO+' vagas)':'Personal presencial ('+NP+' vagas)'}</h2><div class="card">${a.map((x,i)=>`<div class="pl"><span class="k">${i+1}</span><input type="text" placeholder="Nome do aluno" data-sl="${p}" data-i="${i}" data-k="n" value="${esc(x.n)}"><input type="number" inputmode="decimal" step="any" min="0" placeholder="R$/mês" data-sl="${p}" data-i="${i}" data-k="v" value="${x.v||''}"><label><input type="checkbox" data-rc="${S.m}|${p}${i}" ${S.rec[S.m+'|'+p+i]?'checked':''}> pago</label></div>`).join('')}</div><span class="mut">O valor é mensal e fica salvo. Marque "pago" em cada mês para ver o recebido.</span>`}
+ else if(tab==='g'){const row=(x,k,i)=>`<div class="pl"><div class="i"><b>${esc(x.n)}</b><span>${esc(x.c)}</span></div><b>${f(x.v)}</b><button class="s x" data-del="${k}${i}">✕</button></div>`;
+  el.innerHTML=mnav()+`<h2>Novo gasto</h2><div class="card"><div class="row"><input id="gn" placeholder="Descrição"><input id="gv" type="number" inputmode="decimal" step="any" min="0" placeholder="Valor R$"></div><div class="row"><select id="gc">${S.cat.map(x=>`<option>${esc(x)}</option>`).join('')}</select><select id="gt"><option value="f">Fixo (todo mês)</option><option value="v">Variável (só ${ml()})</option></select></div><button data-add="1" style="width:100%">Adicionar gasto</button></div>
+  <h2>Fixos · ${f(c.fx)}</h2><div class="card">${S.f.map((x,i)=>row(x,'f',i)).join('')||'<span class="mut">Nenhum gasto fixo.</span>'}</div>
+  <h2>Variáveis de ${ml()} · ${f(c.vr)}</h2><div class="card">${S.v.map((x,i)=>x.m===S.m?row(x,'v',i):'').join('')||'<span class="mut">Nenhum gasto variável neste mês.</span>'}</div>
+  <div class="big"><small>Total de despesas do mês</small><div class="v">${f(c.des)}</div></div>`}
+ else{el.innerHTML=`<h2>Reserva de emergência</h2><div class="card"><div class="row"><span class="mut">Meses de cobertura<input id="rm" type="number" min="1" value="${S.r.m}"></span><span class="mut">Valor já guardado (R$)<input id="ra" type="number" inputmode="decimal" step="any" min="0" value="${S.r.a||''}"></span></div><span class="mut">A meta é o número de meses × suas despesas do mês (fixas + variáveis).</span></div>
+  <h2>Categorias de gastos</h2><div class="card">${S.cat.map((x,i)=>`<div class="pl"><div class="i"><b>${esc(x)}</b></div><button class="s x" data-dc="${i}">✕</button></div>`).join('')}<div class="row" style="margin-top:8px"><input id="nc" placeholder="Nova categoria"><button data-nc="1">Criar</button></div></div>
+  <h2>Backup dos dados</h2><div class="card"><span class="mut">Os dados ficam salvos neste aparelho. Copie o texto para guardar ou cole um backup e importe.</span><textarea id="bk"></textarea><div class="row"><button data-exp="1">Gerar backup</button><button data-imp="1">Importar</button></div></div>`}
+ $('#nv').innerHTML=[['p','📊','Painel'],['o','💻','Online'],['r','🏋️','Presencial'],['g','💸','Gastos'],['m','⚙️','Mais']].map(t=>`<button data-t="${t[0]}" class="${tab===t[0]?'on':''}"><i>${t[1]}</i>${t[2]}</button>`).join('')}
+document.addEventListener('click',e=>{const d=e.target.closest('[data-t],[data-mm],[data-add],[data-del],[data-dc],[data-nc],[data-exp],[data-imp]');if(!d)return;const D=d.dataset;
+ if(D.t){tab=D.t;view();scrollTo(0,0)}
+ else if(D.mm){let[y,m]=S.m.split('-').map(Number);m+=+D.mm;if(m<1){m=12;y--}if(m>12){m=1;y++}S.m=y+'-'+String(m).padStart(2,'0');save();view()}
+ else if(D.add){const n=$('#gn').value.trim(),v=num($('#gv').value);if(!n||!v)return alert('Preencha a descrição e o valor.');const x={n,v,c:$('#gc').value};if($('#gt').value==='f')S.f.push(x);else{x.m=S.m;S.v.push(x)}save();view()}
+ else if(D.del){const k=D.del[0],i=+D.del.slice(1);if(confirm('Excluir este gasto?')){S[k].splice(i,1);save();view()}}
+ else if(D.nc){const n=$('#nc').value.trim();if(n&&!S.cat.includes(n)){S.cat.push(n);save();view()}}
+ else if(D.dc!=null){S.cat.splice(+D.dc,1);save();view()}
+ else if(D.exp){$('#bk').value=JSON.stringify(S)}
+ else if(D.imp){try{const x=JSON.parse($('#bk').value);if(!x.on||!x.pr)throw 0;S=Object.assign(S,x);save();view();alert('Dados importados.')}catch(_){alert('Backup inválido.')}}});
+document.addEventListener('change',e=>{const t=e.target,D=t.dataset;
+ if(D.sl){const a=D.sl==='o'?S.on:S.pr;a[+D.i][D.k]=D.k==='v'?num(t.value):t.value.trim();save();view()}
+ else if(D.rc){if(t.checked)S.rec[D.rc]=1;else delete S.rec[D.rc];save();view()}
+ else if(t.id==='rm'){S.r.m=Math.max(1,parseInt(t.value)||6);save();view()}
+ else if(t.id==='ra'){S.r.a=num(t.value);save();view()}});
+view();
+if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+</script></body></html>
